@@ -37,7 +37,7 @@ class Solution:
         nums.reverse()
         return nums
 
-    def permute(self, nums: list[int]) -> list[list[int]]:
+    def permuteUnique(self, nums: list[int]) -> list[list[int]]:
         n = len(nums)
         # print(n)
         nf = self.fact(n)
@@ -57,4 +57,4 @@ class Solution:
         return list_perms
 
 q = Solution()
-print(q.permute([1,-2,1,-2,1,-2]))
+print(q.permuteUnique([1,-2,1,-2,1,-2]))
