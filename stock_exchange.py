@@ -37,7 +37,7 @@ class Solution():
     def maxProfitKT(self, k, prices):
         """
         dynamic programming
-        compute max profit in 2 transactions
+        compute max profit in k transactions
         """
         if not prices:
             return 0
