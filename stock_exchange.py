@@ -31,7 +31,7 @@ class Solution():
 
             b2 = min(b2, prices[i]-p1)
             p2 = max(p2, prices[i]-b2)
-            print("2T",p2)
+            # print("2T",p2)
         return p2
 
     def maxProfitKT(self, k, prices):
@@ -60,8 +60,28 @@ class Solution():
                 # print("KT",p[j])
         return p[-1]
 
+    def maxProfit(self, prices):
+        """
+        dynamic:
+        each day decide to sell or hold
+
+        a simple idea is for each day count profit incrementally
+        reset buy price for each day you see a loss
+        """
+        totalProfit = 0
+        for i in range(len(prices)):
+            if i == 0:
+                continue
+            if prices[i] >= prices[i-1]:
+                totalProfit = totalProfit+prices[i]-prices[i-1]
+            else:
+                pass
+        return totalProfit
+
 q = Solution()
+# print(q.maxProfit2T([7,6,4,3,1]))
 # print(q.maxProfit2T([3,3,5,0,0,3,1,4]))
 # print(q.maxProfitKT(2,[3,3,5,0,0,3,1,4]))
-print(q.maxProfitKT(2, [2,4,1]))
-print(q.maxProfitKT(2,[3,2,6,5,0,3]))
+# print(q.maxProfitKT(2, [2,4,1]))
+# print(q.maxProfitKT(2,[3,2,6,5,0,3]))
+print(q.maxProfit([3,3,5,0,0,3,1,4]))
