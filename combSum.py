@@ -12,5 +12,7 @@ class Solution:
         for i in range(len(nums)):
             self.dfs(nums[i:], target-nums[i], path+[nums[i]], result)
 
+
+
 q = Solution()
 print(q.combinationSum([2], 1))
