@@ -43,8 +43,9 @@ class Solution():
 
     def dequeMethod(self, s1, s2):
         # first do an n check to see if the strings are lined up
+        # bad and slow code!
         if s1 == s2:
-            retrun True
+            return True
         # make dequeues of s1 and s2
         q1, q2 = deque(s1), deque(s2)
 
@@ -55,9 +56,6 @@ class Solution():
                 return True
             i += 1
         return False
-
-
-
 
 
     def rotateString(self, s, goal) -> bool:
