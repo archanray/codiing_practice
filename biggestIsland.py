@@ -13,7 +13,6 @@ class Solution():
             print(i, j)
             if i < self.m and j < self.n:
                 finalPath.append([i,j])
-        print("printing path:", finalPath)
         return finalPath
     def BFS(self, start):
         i, j = start[0], start[1]
