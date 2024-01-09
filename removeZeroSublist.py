@@ -4,7 +4,6 @@ class Solution:
         Leetcode - 1171
         Given a list remove sublists that sum to zero
         """
-        currentSum = 0
         prefixSum = 0
         dictOfSums = {}
         for i in range(len(nums)):
