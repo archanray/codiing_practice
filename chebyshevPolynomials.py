@@ -34,10 +34,11 @@ def polarChebyshev(thetas, degrees):
     """
     computes polar chebyshev function
     """
-    print(thetas, degrees)
+    print("thetas and degrees:", thetas, degrees)
     coeffs = degrees * [0] + [1]
-    print(coeffs)
+    print("Coefficients:", coeffs)
     xvals = thetas / np.pi - 1
+    print("Chebval:", chebyshev.chebval(xvals, coeffs), chebyshev.chebval(xvals, coeffs)+ degrees)
     # return ChebyshevWrapper(xvals, len(coeffs), coeffs) + degrees
     return chebyshev.chebval(xvals, coeffs) + degrees
 
