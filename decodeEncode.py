@@ -54,3 +54,62 @@ q = Solution()
 fullTreeRoot = q.buildTree(preorder, inorder)
 
 print(q.encodeTree(fullTreeRoot))
+
+
+##### For Leetcode format
+# input is a level order traversal of a binary tree with nulls indicating missing nodes
+# reusing tree structure as before
+class Codec:
+    def deserialize(self, traversal):
+        # construct tree from level order traversal
+        if len(traversal) == 0:
+            return None
+        split_vals = traversal.split(",")
+        if split_vals[0] == "null":
+            return None
+        # remove the trailing null
+        queue = []
+        root = TreeNode(int(split_vals[0]))
+        queue.append(root)
+        idx = 0
+        print(split_vals)
+        while len(queue) != 0:
+            print(idx)
+            node = queue.pop(0)
+            idx += 1
+            if split_vals[idx] == "null":
+                node.left = None
+            else:
+                node.left = TreeNode(int(split_vals[idx]))
+                queue.append(node.left)
+            idx += 1
+            if split_vals[idx] == "null":
+                node.right = None
+            else:
+                node.right = TreeNode(int(split_vals[idx]))
+                queue.append(node.right)
+        return root
+            
+    
+    def serialize(self, root):
+        # construct a level order traversal of the tree
+        # root: TreeNode
+        s = ""
+        queue = []
+        queue.append(root)
+        while len(queue) != 0:
+            node = queue.pop(0)
+            if node == None:
+                s += "null,"
+                continue
+            s += str(node.val) + ","
+            if node != None:
+                queue.append(node.left)
+                queue.append(node.right)
+        return s[:-1]
+
+root = "1,2,3,null,null,4,5,null,null,null,null"
+ser = Codec()
+deser = Codec()
+ans = deser.deserialize(ser.serialize(deser.deserialize(root)))
+print(ans) # [1,2,3,null,null,4,5]
