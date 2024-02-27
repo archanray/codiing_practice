@@ -72,9 +72,7 @@ class Codec:
         root = TreeNode(int(split_vals[0]))
         queue.append(root)
         idx = 0
-        print(split_vals)
         while len(queue) != 0:
-            print(idx)
             node = queue.pop(0)
             idx += 1
             if split_vals[idx] == "null":
