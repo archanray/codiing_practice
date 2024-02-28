@@ -19,7 +19,7 @@ class Solution:
                     # if the first different character is found, break the loop
                     flag = False
                     break
-            # if the for loop ran correctly thn the following runs
+            # if the for loop ran correctly then the following runs
             if flag:
                 # if the first word is greater than the second word, return false
                 if len(word1) > len(word2):

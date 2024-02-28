@@ -37,7 +37,7 @@ class Solution:
         nums.reverse()
         return nums
 
-    def permute(self, nums: list[int]) -> list[list[int]]:
+    def permute_using_fact(self, nums: list[int]) -> list[list[int]]:
         n = len(nums)
         # print(n)
         nf = self.fact(n)
@@ -55,6 +55,27 @@ class Solution:
             else:
                 list_perms.append(nums)
         return list_perms
+    
+    def backtrack(self):
+        n = len(self.nums)
+        if len(self.p) == n:
+            self.ans.append(self.p[:])
+            return
+        for i in range(n):
+            if not self.v[i]:
+                self.v[i] = True
+                self.p.append(self.nums[i])
+                self.backtrack()
+                self.v[i] = False
+                self.p.pop()
+        return
+    def permute(self, nums):
+        self.ans = []
+        self.p = []
+        self.v = [False] * len(nums)
+        self.nums = nums
+        self.backtrack()
+        return self.ans
 
 q = Solution()
-print(q.permute([1,-2,1,-2,1,-2]))
+print(len(q.permute([1,-2,1,-2,1,-2])))
