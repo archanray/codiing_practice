@@ -2,7 +2,7 @@ class Solution:
     def canJump(self, nums: list[int]) -> bool:
         """
         from any position see where you can reach.
-        if you cant improve reah and 
+        if you cant improve reach and 
         your id is less than max reach return false
         else continue
         if total reach is geq final element

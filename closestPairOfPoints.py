@@ -5,9 +5,9 @@ class Solution():
 		
 	def bruteForce(self, xsorted):
 		# compute brute fortce distance
-		d1 = dist(xsorted[0], xsorted[1])
-		d2 = dist(xsorted[0], xsorted[2])
-		d3 = dist(xsorted[1], xsorted[2])
+		d1 = self.dist(xsorted[0], xsorted[1])
+		d2 = self.dist(xsorted[0], xsorted[2])
+		d3 = self.dist(xsorted[1], xsorted[2])
 		if d1 <= d2 and d1 <= d3:
 			return (xsorted[0], xsorted[1], d1)
 		if d2 <= d1 and d2 <= d3:
@@ -41,8 +41,8 @@ class Solution():
 		in_band = [point for point in ysorted if midpoint[0]-delta < \
 					point[0] < midpoint[0]+delta]
 		for i in range(len(in_band)):
-			for i in range(i+1, min(i+7, len(in_band))):
-				d = dist(in_band[i], in_band[j])
+			for j in range(i+1, min(i+7, len(in_band))):
+				d = self.dist(in_band[i], in_band[j])
 				if d < delta:
 					(p1, p2, delta) = (in_band[i], in_band[j], d)
 		return p1, p2, delta
@@ -54,5 +54,6 @@ class Solution():
 		ysorted = sorted(points, key=lambda point:point[1])
 		return self.rec(xsorted, ysorted)
 
+nums = [[1,1],[3,3],[4,4],[5,5],[2,2]]
 q = Solution()
 print(q.findPairs(nums))

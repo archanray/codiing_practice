@@ -25,3 +25,14 @@ class Solution:
             if not self.dfs(course, visited):
                 return False
         return True
+
+# numcourses = 2
+# prereqs = [[1,0]]
+# numcourses = 5
+# prereqs = [[1,4],[2,4],[3,1],[3,2]]
+# numCourses = 10
+# prereqs = [[5,8],[3,5],[1,9],[4,5],[0,2],[7,8],[4,9]]
+numCourses = 10
+prereqs = [[5,8],[3,5],[1,9],[4,5],[0,2],[7,8],[4,9]]
+q = Solution()
+print(q.canFinish(numCourses, prereqs)) # True
