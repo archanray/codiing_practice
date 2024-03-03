@@ -1,13 +1,5 @@
 # Among all possible binary trees considered, return the smallest possible sum of the values of each non-leaf node. It is guaranteed this sum fits into a 32-bit integer.
-# algorithm logic:
-# 1. Create a stack and push infinity to it.
-# 2. Loop through the array.
-# 3. Check if the last element in the stack is less than or equal to the current element in the array.
-# 4. If true, pop the last element in the stack and multiply it by the minimum of the last element in the stack and the current element in the array.
-# 5. Append the current element in the array to the stack.
-# 6. Loop through the stack.
-# 7. Pop the last element in the stack and multiply it by the last element in the stack.
-# 8. Return the result.
+# LC: hard
 class Solution:
     def mctFromLeafValues(self, arr):
         stack = [float('inf')]

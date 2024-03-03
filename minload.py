@@ -1,11 +1,5 @@
 # minimum possible value of max load time of servers if resources are allocated optimally
-# example:
-# bursttime = [4,3,2,2,2,6], k = 3
-# output: 7
-# bursttime = [2,3,1,2,4,3], k = 2
-# output: 9
-# bursttime = [1,2,3,4,5], k = 2
-# output: 8
+# LC: hard
 class Solution:
     def minimumTimeRequired(self, jobs, k):
         if k == len(jobs):
