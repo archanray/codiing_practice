@@ -1,4 +1,12 @@
 # Given an integer n, return all distinct solutions to the n-queens puzzle. You may return the answer in any order.
+# algorithm logic:
+# 1. Create a function to check if the current position is valid.
+# 2. Create a function to solve the n-queens puzzle.
+# 3. Create a variable to store the result.
+# 4. Call the solve function.
+# 5. Return the result.
+# time complexity: O(n!)
+# space complexity: O(n)
 class Solution:
     def solveNQueens(self, n):
         def is_valid(board, x, y):

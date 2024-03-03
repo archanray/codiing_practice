@@ -1,3 +1,14 @@
+# Question: find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
+# algorithm logic:
+# 1. Get the length of the array.
+# 2. Check if the length of the array is 1.
+# 3. If true, return the first element in the array.
+# 4. Create a 2D array to store the minimum path sum.
+# 5. Loop through the array.
+# 6. Loop through the array.
+# 7. Get the minimum path sum.
+# 8. Return the minimum path sum.
+# time complexity: O(n^2)
 class Solution():
 	def minimumTotal(self, a):
 		depth = len(a)

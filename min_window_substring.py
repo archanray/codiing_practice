@@ -1,5 +1,5 @@
 from collections import Counter
-
+# code to find the smallest window in a string containing all characters of another string
 class Solution:
     def minWindow(self, s, t):
         # complexity: O(n)
@@ -51,4 +51,4 @@ class Solution:
         return "" if ans[0] == float("inf") else s[ans[1] : ans[2] + 1]
 
 q = Solution()
-print(q.minWindow("ADOBECODEBANC", "ABC")) # "BANC"
+print(q.smallestWindow("ADOBECODEBANC", "ABC")) # "BANC"
