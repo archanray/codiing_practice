@@ -1,4 +1,6 @@
+import numpy as np
 class Solution():
+    # formula: 5*n^2+4 or 5*n^2-4 is a fibonacci
     def checkSquare(self, num):
         if num <= 1:
             return True
@@ -13,6 +15,12 @@ class Solution():
             else:
                 right = mid-1
         return False
+    def slowCheckSquare(self, num):
+        roundSqrtNum = np.round(np.sqrt(num))
+        if num == roundSqrtNum**2:
+            return True
+        else:
+            return False
     def checkFibo(self, num):
         if num == 0:
             return False
@@ -21,6 +29,8 @@ class Solution():
         n2 = nbase-4
         if self.checkSquare(n1) or self.checkSquare(n2):
             return True
+        # if self.slowCheckSquare(n1) or self.slowCheckSquare(n2):
+        #     return True
         else:
             return False
     def findSubset(self, nums):

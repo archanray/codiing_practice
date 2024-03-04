@@ -21,7 +21,7 @@ class Solution:
                     graph[a].append(b)
                     # increase indegree counter
                     indegree[b] += 1
-                    # stop of the characters don't match
+                    # stop if the characters don't match
                     break
         # construct a doubly open queue
         # what does indegree[c] == 0 mean?

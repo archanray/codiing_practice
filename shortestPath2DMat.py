@@ -30,6 +30,7 @@ class Solution:
 
                     # else find where to next
                     if 0 <= xs and xs < n and 0 <= ys and ys < m:
+                        # can only move through 0s
                         if grid[xs][ys] == 0:
                             q.append((xs, ys, PL+1))
                             grid[xs][ys] = 1

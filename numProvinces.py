@@ -1,3 +1,4 @@
+# LC: medium
 class Solution():
 	def dfs(self, start):
 		if self.visited[start] == 0:

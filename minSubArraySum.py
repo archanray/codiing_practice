@@ -3,6 +3,7 @@ class Solution:
     def minSubArrayLen(self, target: int, nums: list[int]) -> int:
         """
         return sub array with smallest length equalling sum
+        guaranteed to have the target as a sub array (sub arrays are continuous)
         """
         if sum(nums) < target:
             return 0

@@ -33,6 +33,6 @@ class Solution():
 					output = rep*output
 		return output
 
-inputs = "2[a2[b]]"
+inputs = "2[a2[b2[c]]]"
 q = Solution()
 print(q.recursiveStrDecoder(inputs))

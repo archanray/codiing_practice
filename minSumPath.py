@@ -1,3 +1,4 @@
+# no diagonal moves are allowed
 class Solution:
     def minPathSum(self, grid: list[list[int]]) -> int:
         n = len(grid)

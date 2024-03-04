@@ -10,7 +10,7 @@ class Solution:
             return head
         slow = head
         fast = head
-        prev = head
+        previous = head
         for i in range(n):
             fast = fast.next
         while fast:
