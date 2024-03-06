@@ -12,7 +12,7 @@ class Solution():
 		given list of strings return if they are pangrams
 
 		answer format: "1100" for 4 strings with first 2
-		beign pangrams and last 2 being not
+		being pangrams and last 2 being not
 		"""
 		m = len(strings)
 		output = ""

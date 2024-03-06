@@ -1,9 +1,9 @@
 # Given two strings s and t, return the number of distinct subsequences of s which equals t.
 class Solution:
     def numDistinct(self, s, t):
-        dp = [[0] * (len(t) + 1) for _ in range(len(s) + 1)]
+        dp = [[0] * (len(t) + 1) for _ in range(len(s) + 1)] # len(s)+1 \times len(t)+1 matrix
         for i in range(len(s) + 1):
-            dp[i][0] = 1
+            dp[i][0] = 1    # set first column to 1
         for i in range(1, len(s) + 1):
             for j in range(1, len(t) + 1):
                 # if characters are equal, we can choose to use the character or not

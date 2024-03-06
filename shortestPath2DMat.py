@@ -2,6 +2,7 @@ class Solution:
     def shortestPathBinaryMatrix(self, grid: list[list[int]]) -> int:
         """
         try to go from 0,0 to m,n
+        using BFS
         """
         if grid == [[0]]:
             return 1
@@ -35,7 +36,6 @@ class Solution:
                             q.append((xs, ys, PL+1))
                             grid[xs][ys] = 1
         return -1
-
 
 q = Solution()
 print(q.shortestPathBinaryMatrix([[0,0,0],[1,1,0],[1,1,0]]))       

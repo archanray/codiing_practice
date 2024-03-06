@@ -5,7 +5,7 @@ class Solution:
         cost: cost to go from ith to (i+1)th station
 
         return:
-        starting index such that you can o clockwise once
+        starting index such that you can go clockwise once
         else:
         return -1
         """
