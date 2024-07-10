@@ -1,26 +1,29 @@
 from copy import copy
+import numpy as np
 class Solution():
-	def kPalindromeCheck(self, string, k):
-		# check if a string can be palindrome after removing k chars
-		n = len(string)
-		if n == 0:
-			return True
-		stringRev = string[-1::-1]
-		# now solve the longest common subsequence problem!
-		m = copy(n)
-		DP = [[0]*(m+1)]*(n+1)
-		for i in range(1,m+1):
-			for j in range(1,n+1):
-				if stringRev[i-1] == string[j-1]:
-					DP[i][j] = DP[i-1][j-1]+1
-				else:
-					DP[i][j] = max(DP[i-1][j], DP[i][j-1])
-		lenPal = DP[m][n]
-		if lenPal + k == n:
-			return True
-		else:
-			return False
-		
+    def editDistance(self, string1, string2):
+        m = len(string1)
+        n = len(string2)
+        dp = np.zeros((m+1, n+1)).astype(int)
+        dp[0,:] = list(range(m+1))
+        dp[:,0] = list(range(n+1))
+        
+        for i in range(1,m+1):
+            for j in range(1, n+1):
+                if string1[i-1] == string2[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1])
+        return dp[m,n]
+    
+    def kPalindromeCheck(self, string, k):
+        str1 = string
+        str2 = string[-1::-1]
+        distance = self.editDistance(str1, str2)
+        if distance <= 2*k:
+            return True
+        return False
+
 intputStr = "acdcb"
 K = 1
 q = Solution()

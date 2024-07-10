@@ -82,30 +82,30 @@ plt.legend()
 plt.title("Linear plot of Chebyshev's polynomials")
 plt.show()
 
-# for polar plot
-# define variables
-thetas = np.linspace(0, 2 * np.pi, num=1000)
-degrees = np.arange(0, 40, 2)
-CHEBSPOL = np.array(polarChebyshevGenerator(thetas, degrees)).T
-# Plot Chebyshev spiral
-fig = plt.figure()
-ax1 = plt.subplot(121, projection='polar')
-ax2 = plt.subplot(122, projection='polar')
+# # for polar plot
+# # define variables
+# thetas = np.linspace(0, 2 * np.pi, num=1000)
+# degrees = np.arange(0, 40, 2)
+# CHEBSPOL = np.array(polarChebyshevGenerator(thetas, degrees)).T
+# # Plot Chebyshev spiral
+# fig = plt.figure()
+# ax1 = plt.subplot(121, projection='polar')
+# ax2 = plt.subplot(122, projection='polar')
 
-ax1.grid(False)
-ax1.set_yticklabels([])
-ax1.set_thetagrids([])
-ax1.spines['polar'].set_visible(False)
+# ax1.grid(False)
+# ax1.set_yticklabels([])
+# ax1.set_thetagrids([])
+# ax1.spines['polar'].set_visible(False)
 
-ax2.grid(False)
-ax2.set_yticklabels([])
-ax2.set_thetagrids([])
-ax2.spines['polar'].set_visible(False)
+# ax2.grid(False)
+# ax2.set_yticklabels([])
+# ax2.set_thetagrids([])
+# ax2.spines['polar'].set_visible(False)
 
-for cpol in CHEBSPOL:
-    ax1.plot(thetas, cpol)
+# for cpol in CHEBSPOL:
+#     ax1.plot(thetas, cpol)
 
-for pla, plb in CHEBSPOL.reshape(-1, 2, 1000):
-    ax2.fill_between(thetas, pla, plb, facecolor='black')
+# for pla, plb in CHEBSPOL.reshape(-1, 2, 1000):
+#     ax2.fill_between(thetas, pla, plb, facecolor='black')
 
-plt.show()
+# plt.show()

@@ -15,8 +15,8 @@ class Solution:
         return True
     
     def canFinish(self, numCourses, prereqs):
-        self.adj = [[] for _ in range(numCourses)]
         # create adj list of graph
+        self.adj = [[] for _ in range(numCourses)]
         for course,prereq in prereqs:
             self.adj[course].append(prereq)
         # perform DFS
